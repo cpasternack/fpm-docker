@@ -1,5 +1,5 @@
-FROM ubuntu:16.04
-LABEL maintainer="dortiz@devops.faith"
+FROM ubuntu:18.04
+LABEL maintainer="cpasternack@noreply.github.com"
 
 RUN apt-get update && apt-get install -y \
 	ruby-dev \
@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
 	ruby \
 	&& rm -rf /var/lib/apt/lists/*
 
-RUN gem install fpm -v 1.9.3 --no-ri --no-rdoc
+RUN gem install fpm -v 1.11.0 --no-ri --no-rdoc
 
 VOLUME [ "/tmp/fpm" ]
 WORKDIR /tmp/fpm
