@@ -33,7 +33,7 @@ case $1 in
           --compress \
           --label "version=${VERSION}" \
           --label "maintainer=${AUTHOR} <${EMAIL}>" \
-          -t ${REGISTRY}/fpm-updates:${VERSION} .
+          -t ${REGISTRY}/fpm-updates:${VERSION} deb 
       fi
     else
       VERSION="xenial"
@@ -42,7 +42,7 @@ case $1 in
         --compress \
         --label "version=${VERSION}" \
         --label "maintainer=${AUTHOR} <${EMAIL}>" \
-        -t ${REGISTRY}/fpm-updates:${VERSION} .
+        -t ${REGISTRY}/fpm-updates:${VERSION} deb
     fi
   ;;
   rpm)
@@ -56,7 +56,7 @@ case $1 in
           --compress \
           --label "version=${VERSION}" \
           --label "maintainer=${AUTHOR} <${EMAIL}>" \
-          -t ${REGISTRY}/fpm-updates:${VERSION} .
+          -t ${REGISTRY}/fpm-updates:${VERSION} rpm
       fi
     else
       VERSION="centos7"
@@ -65,7 +65,7 @@ case $1 in
         --compress \
         --label "version=${VERSION}" \
         --label "maintainer=${AUTHOR} <${EMAIL}>" \
-        -t ${REGISTRY}/fpm-updates:${VERSION} .
+        -t ${REGISTRY}/fpm-updates:${VERSION} rpm
     fi
   ;;
   *)
