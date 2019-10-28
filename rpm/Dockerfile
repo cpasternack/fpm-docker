@@ -1,5 +1,5 @@
-FROM centos:7
-LABEL maintainer="dortiz@devops.faith"
+FROM centos:8
+LABEL maintainer="cpasternack@noreply.github.com"
 
 RUN yum install -y \
 	ruby-devel \
@@ -9,7 +9,7 @@ RUN yum install -y \
 	rpm-build \
 	rpm-sign && yum clean all
 
-RUN gem install fpm -v 1.9.3 --no-ri --no-rdoc
+RUN gem install fpm -v 1.11.0 --no-ri --no-rdoc
 
 VOLUME [ "/tmp/fpm" ]
 WORKDIR /tmp/fpm
